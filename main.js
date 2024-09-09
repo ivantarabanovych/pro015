@@ -1,26 +1,12 @@
-const circle = {
-    _radius: 5,
+const car = {
+    brand: "AUDI",
+    model: "A6",
 
-    get area(){
-        return Math.PI * Math.pow(this._radius, 2);
-    },
-
-    set radius(value){
-        if (value < 0){
-            console.error("Радіус кола не може бути від'ємним!");
-            return;
-        }
-
-        this._radius = value;
+    description: function(){
+        return `Марка автомобіля: ${this.brand}\nМодель автомобіля: ${this.model}`;
     }
 };
 
-circle.radius = 3,14159;
-console.log(circle.area);
+console.log(car.description());
 
-circle.radius = 8.4;
-console.log(circle.area);
-
-circle.radius = -2;
-console.log(circle.area);
 
