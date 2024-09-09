@@ -1,28 +1,26 @@
-const calculator = {
-    add: function (a, b){
-        return a + b;
+const circle = {
+    _radius: 5,
+
+    get area(){
+        return Math.PI * Math.pow(this._radius, 2);
     },
 
-    subtract: function (a, b){
-        return a - b;
-    },
-
-    multiply: function (a, b){
-        return a * b;
-    },
-
-    divide: function (a, b){
-        if (b === 0){
-            return "Помилка ділення на 0"
+    set radius(value){
+        if (value < 0){
+            console.error("Радіус кола не може бути від'ємним!");
+            return;
         }
 
-        return a / b;
+        this._radius = value;
     }
-    
 };
 
-console.log(calculator.add (16, 4));
-console.log(calculator.subtract (16, 4));
-console.log(calculator.multiply (16, 4));
-console.log(calculator.divide (16, 0));
-console.log(calculator.divide (16, 4));
+circle.radius = 3,14159;
+console.log(circle.area);
+
+circle.radius = 8.4;
+console.log(circle.area);
+
+circle.radius = -2;
+console.log(circle.area);
+
